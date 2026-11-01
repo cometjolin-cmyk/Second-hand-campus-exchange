@@ -1,0 +1,60 @@
+一、 業界標準的做法：PRD vs. UI/UX 規範
+檔案	核心職責	應該放什麼	不應該放什麼
+PRD.md
+
+
+(產品需求文件)
+
+邏輯、業務、資料
+
+
+(What & Why)
+
+• 使用者故事與權限矩陣
+
+
+• 資料庫架構 (Firestore 欄位)
+
+
+• 狀態機 (上架中 ➜ 預約中)
+
+
+• 功能邊界與驗收條件 (AC)
+
+具體色碼 (#0F2942)、CSS 像素 (12px 圓角)、動畫毫秒數 (200ms)、陰影樣式。
+UIUX.md
+
+
+(設計規範與系統)
+
+視覺、互動、感官
+
+
+(How it looks & feels)
+
+• 色彩系統 (Primary, Accent, Background)
+
+
+• 字體階層 (H1~H4, line-height)
+
+
+• 8px 間距律動與圓角定義
+
+
+• 元件樣式 (Bento Grid, Pill Badge, Safe Area)
+
+資料庫 Schema、後端規則、商業邏輯、Firebase 錯誤碼對照表。
+
+
+我把 PRD.md 重寫成可重現版，共 21 節，目標是讓別人（或 AI 工具）拿到這份文件，就能做出功能相近的產品。
+
+新版比舊版多了什麼
+類別	內容
+規格	每項功能的欄位、驗證規則、錯誤訊息，以及 Firebase 錯誤代碼對應的中文提示
+資料模型	6 個 Firestore 集合的完整欄位（profiles、items、favorites、transactions、notifications、verifications）
+邏輯	商品與交易狀態機、12 條業務規則、6 種通知的觸發時機與文案
+結構	路由表與權限矩陣、元件清單、建議目錄結構
+資料	24 筆示範資料的規格
+安全	建議的 Firestore 安全規則範本，以及它剩下的缺口
+驗收	33 條驗收條件（Given／When／Then），可直接當測試表
+重現	11 階段的建置順序，以及與 AI 協作的注意事項
